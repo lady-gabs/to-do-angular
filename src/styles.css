@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: rgb(213, 179, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+}
+
+#list li {
+    list-style-type: none;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

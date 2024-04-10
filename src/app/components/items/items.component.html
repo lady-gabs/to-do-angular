@@ -1,0 +1,9 @@
+<li *ngFor="let task of tasks">
+    <p *ngIf="task.check; else notCheckCss" [ngStyle]="{'text-decoration': 'line-through'}">{{task.info}}</p>
+    <ng-template #notCheckCss><p>{{task.info}}</p></ng-template>
+    
+    <div>
+        <button class="btn" (click)="removeTask(task)">X</button>
+        <button class='btn' (click)="checkTask(task)">ok</button>
+    </div>
+</li>

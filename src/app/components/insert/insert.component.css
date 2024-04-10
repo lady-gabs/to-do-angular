@@ -1,0 +1,16 @@
+* {
+    display: flex;
+    justify-content: center;
+}
+#insertTask {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#task, #addButton {
+    border-radius: 5px;
+    border-style: none;
+    padding: 5px;
+}

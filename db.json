@@ -1,0 +1,29 @@
+{
+  "tasks-todo": [
+    {
+      "id": 1,
+      "info": "task 1",
+      "check": false
+    },
+    {
+      "id": 2,
+      "info": "task 2",
+      "check": true
+    },
+    {
+      "id": 3,
+      "info": "task 3",
+      "check": true
+    },
+    {
+      "id": 4,
+      "info": "task 4",
+      "check": false
+    },
+    {
+      "id": 5,
+      "info": "task 5",
+      "check": false
+    }
+  ]
+}
