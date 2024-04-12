@@ -14,7 +14,7 @@ export class ListService {
   remove(id: number) {
     return this.http.delete<Task>(`${this.urlApi}/${id}`);
   }
-  getAll(): Observable<Task[]> {
+  getAll(): Observable<Task[]> { 
     return this.http.get<Task[]>(this.urlApi);  //consulta lista de tasks contida em db.json
   }
 

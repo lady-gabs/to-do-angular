@@ -1,35 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { Task } from '../../Task';
-import { ListService } from "../../services/list.service";
 
 @Component({
   selector: 'app-items',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './items.component.html',
-  styleUrl: './items.component.css'
+  styleUrl: './items.component.css' 
 })
 export class ItemsComponent {
-  tasks: Task[] = [];
-  textDecoration : string = '';
+  @Output() remove: EventEmitter<any> = new EventEmitter();
+  @Output() check: EventEmitter<any> = new EventEmitter();
   
-  constructor(private listService: ListService) {
-    this.getTasks();
+  toCheck() {
+    this.check.emit(); 
   }
-  getTasks():void  {
-    this.listService.getAll().subscribe((tasks) => this.tasks = tasks);
+  
+  toRemove(){
+    this.remove.emit();
   }
-  checkTask(task: Task){
-    if (task.check) {
-      task.check = false;
-    } else {
-      task.check = true;
-    }
-  }
-  removeTask(task: Task){
-    this.tasks = this.tasks.filter((elem)=> task.info !== elem.info);
-    this.listService.remove(task.id).subscribe();
-  }
+
 }

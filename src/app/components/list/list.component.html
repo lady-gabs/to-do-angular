@@ -1,3 +1,8 @@
+<app-insert (send)="insertTask($event)"></app-insert>
 <ul id="list">
-    <app-items></app-items>
+    <li *ngFor="let task of tasks">
+        <p *ngIf="task.check; else notCheckCss" [ngStyle]="{'text-decoration': 'line-through'}">{{task.info}}</p>
+        <ng-template #notCheckCss><p>{{task.info}}</p></ng-template>
+        <app-items (remove)="removeTask(task)" (check)="checkTask(task)"></app-items>
+    </li>
 </ul>

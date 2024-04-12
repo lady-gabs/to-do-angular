@@ -1,5 +1,5 @@
 <h1>To Do List</h1>
 <div id="insertTask">
-    <input type="text" id="task" [placeholder]="placeholder"/>
-    <button id="addButton">Add</button>
+    <input type="text" id="task" [(ngModel)]="value" [placeholder]="placeholder"/>
+    <button id="addButton" (click)="sendValue()">Add</button> 
 </div>
